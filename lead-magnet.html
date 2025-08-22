@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fiche Technique Gratuite - Coach Walid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #005f99;
+            --primary-dark: #004d7a;
+            --secondary-color: #0077cc;
+            --accent-color: #00b4d8;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 80px 0 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .lead-magnet-container {
+            padding: 80px 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .lead-magnet-info {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .lead-magnet-info h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .lead-magnet-info p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .benefits-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .benefits-list li {
+            color: var(--text-light);
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefits-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .form-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 20px;
+        }
+
+        .form-container h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-dark);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .privacy-note {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .preview-section {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+        }
+
+        .preview-section h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .preview-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+
+        .preview-card h4 {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .preview-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .preview-card li {
+            color: var(--text-light);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 0.9rem;
+        }
+
+        .preview-card li:before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .lead-magnet-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .preview-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>🎁 Fiche Technique Gratuite</h1>
+            <p>Maîtrisez le Crawl et la Brasse - Niveau Débutant</p>
+            <a href="coach-walid.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Retour au site principal
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="lead-magnet-container">
+                <div class="lead-magnet-info">
+                    <h2>Perfectionnez vos Nages de Base</h2>
+                    <p>Cette fiche technique exclusive vous donne accès aux exercices essentiels pour améliorer votre crawl et votre brasse, même si vous savez déjà nager.</p>
+                    
+                    <ul class="benefits-list">
+                        <li><strong>Exercices progressifs</strong> pour renforcer vos bases</li>
+                        <li><strong>Techniques de respiration</strong> optimisées</li>
+                        <li><strong>Corrections des erreurs</strong> les plus courantes</li>
+                        <li><strong>Programme d'entraînement</strong> sur 4 semaines</li>
+                        <li><strong>Conseils personnalisés</strong> de Coach Walid</li>
+                    </ul>
+
+                    <p><strong>Niveau requis :</strong> Débutant capable de nager (pas besoin d'être expert)</p>
+                    <p><strong>Format :</strong> PDF téléchargeable immédiatement</p>
+
+                    <div class="preview-section">
+                        <h3>📋 Aperçu du Contenu</h3>
+                        <div class="preview-grid">
+                            <div class="preview-card">
+                                <h4><i class="fas fa-swimming-pool"></i> Le Crawl</h4>
+                                <ul>
+                                    <li>Position du corps optimale</li>
+                                    <li>Mouvement des bras coordonné</li>
+                                    <li>Battements de jambes efficaces</li>
+                                    <li>Respiration rythmée</li>
+                                    <li>Exercices de perfectionnement</li>
+                                </ul>
+                            </div>
+                            <div class="preview-card">
+                                <h4><i class="fas fa-water"></i> La Brasse</h4>
+                                <ul>
+                                    <li>Coordination bras-jambes</li>
+                                    <li>Timing de la respiration</li>
+                                    <li>Position de la tête</li>
+                                    <li>Propulsion optimale</li>
+                                    <li>Exercices de synchronisation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-container">
+                    <h3>📥 Téléchargez Votre Fiche Gratuite</h3>
+                    <form id="leadForm" action="#" method="POST">
+                        <div class="form-group">
+                            <label for="firstName">Prénom *</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName">Nom *</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="level">Niveau actuel *</label>
+                            <select id="level" name="level" required>
+                                <option value="">Sélectionnez votre niveau</option>
+                                <option value="debutant">Débutant (je sais nager mais pas bien)</option>
+                                <option value="intermediaire">Intermédiaire (je nage régulièrement)</option>
+                                <option value="avance">Avancé (je veux me perfectionner)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="goal">Objectif principal</label>
+                            <select id="goal" name="goal">
+                                <option value="">Sélectionnez votre objectif</option>
+                                <option value="technique">Améliorer ma technique</option>
+                                <option value="endurance">Augmenter mon endurance</option>
+                                <option value="competition">Préparer une compétition</option>
+                                <option value="loisir">Nager pour le plaisir</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-download"></i> Télécharger la Fiche
+                        </button>
+                    </form>
+                    
+                    <p class="privacy-note">
+                        🔒 Vos données sont protégées et ne seront utilisées que pour vous envoyer des conseils personnalisés de natation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Récupération des données du formulaire
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulation d'envoi (remplacer par votre logique réelle)
+            console.log('Données du lead:', data);
+            
+            // Affichage du message de succès
+            alert('🎉 Merci ! Votre fiche technique sera téléchargée automatiquement.\n\nCoach Walid vous contactera bientôt pour des conseils personnalisés !');
+            
+            // Ici vous pouvez ajouter le code pour :
+            // 1. Envoyer les données à votre CRM/email marketing
+            // 2. Déclencher le téléchargement du PDF
+            // 3. Rediriger vers une page de remerciement
+            
+            // Exemple de redirection
+            // window.location.href = 'merci.html';
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+# Fichiers de sauvegarde
+*.backup
+*.bak
+*~
+
+# Fichiers temporaires
+*.tmp
+*.temp
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+
+# Fichiers d'éditeur
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# Fichiers de build
+dist/
+build/
+
+# Dépendances (si ajoutées plus tard)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.production

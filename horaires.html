@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horaires - Coach Walid - Natation Performance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #005f99;
+            --primary-dark: #004d7a;
+            --secondary-color: #0077cc;
+            --accent-color: #00b4d8;
+            --text-dark: #1a202c;
+            --text-light: #4a5568;
+            --bg-light: #f7fafc;
+            --white: #ffffff;
+            --shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            padding: 80px 0 60px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .schedule-container {
+            padding: 80px 0;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .schedule-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+
+        .schedule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .schedule-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .schedule-card h3 i {
+            color: var(--accent-color);
+        }
+
+        .time-slot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .time-slot:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .time {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .status {
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .status.open {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .status.closed {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .info-section {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-bottom: 40px;
+        }
+
+        .info-section h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 12px;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            width: 30px;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0;
+            border-radius: 20px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            min-width: 200px;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: var(--white);
+            border-color: var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background: transparent;
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .schedule-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1>Horaires d'Ouverture</h1>
+            <p>Planifiez vos séances de natation selon nos créneaux disponibles</p>
+            <a href="coach-walid.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Retour au site principal
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="schedule-container">
+                <div class="schedule-grid">
+                    <div class="schedule-card">
+                        <h3><i class="fas fa-sun"></i> Lundi - Vendredi</h3>
+                        <div class="time-slot">
+                            <span class="day">Matin</span>
+                            <span class="time">7h00 - 9h00</span>
+                            <span class="status open">Ouvert</span>
+                        </div>
+                        <div class="time-slot">
+                            <span class="day">Après-midi</span>
+                            <span class="time">14h00 - 18h00</span>
+                            <span class="status open">Ouvert</span>
+                        </div>
+                        <div class="time-slot">
+                            <span class="day">Soirée</span>
+                            <span class="time">19h00 - 21h00</span>
+                            <span class="status open">Ouvert</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <h3><i class="fas fa-star"></i> Samedi</h3>
+                        <div class="time-slot">
+                            <span class="day">Matin</span>
+                            <span class="time">8h00 - 12h00</span>
+                            <span class="status open">Ouvert</span>
+                        </div>
+                        <div class="time-slot">
+                            <span class="day">Après-midi</span>
+                            <span class="time">14h00 - 17h00</span>
+                            <span class="status open">Ouvert</span>
+                        </div>
+                        <div class="time-slot">
+                            <span class="day">Soirée</span>
+                            <span class="time">Fermé</span>
+                            <span class="status closed">Fermé</span>
+                        </div>
+                    </div>
+
+                    <div class="schedule-card">
+                        <h3><i class="fas fa-moon"></i> Dimanche</h3>
+                        <div class="time-slot">
+                            <span class="day">Matin</span>
+                            <span class="time">9h00 - 12h00</span>
+                            <span class="status open">Ouvert</span>
+                        </div>
+                        <div class="time-slot">
+                            <span class="day">Après-midi</span>
+                            <span class="time">Fermé</span>
+                            <span class="status closed">Fermé</span>
+                        </div>
+                        <div class="time-slot">
+                            <span class="day">Soirée</span>
+                            <span class="time">Fermé</span>
+                            <span class="status closed">Fermé</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>Informations Pratiques</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <strong>Durée des séances</strong><br>
+                                1h15 en moyenne
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <strong>Capacité</strong><br>
+                                Max 8 personnes par créneau
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <strong>Réservation</strong><br>
+                                Recommandée 48h à l'avance
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <div>
+                                <strong>Annulation</strong><br>
+                                Gratuite jusqu'à 24h avant
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Réservez votre créneau</h2>
+                    <p>Choisissez l'horaire qui vous convient le mieux</p>
+                    <div class="cta-buttons">
+                        <a href="mailto:coachwalid@exemple.com?subject=Réservation créneau" class="btn btn-primary">
+                            <i class="fas fa-calendar-check"></i>
+                            Réserver maintenant
+                        </a>
+                        <a href="tel:+33123456789" class="btn btn-secondary">
+                            <i class="fas fa-phone"></i>
+                            Nous appeler
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
