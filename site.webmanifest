@@ -1,0 +1,25 @@
+{
+  "name": "Coach Walid - Cours de natation à Paris",
+  "short_name": "Coach Walid",
+  "description": "Cours de natation à Paris avec Coach Walid : débutants, confirmés, triathlètes. Séance découverte 30€.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["sports", "education", "health"],
+  "lang": "fr",
+  "dir": "ltr"
+}

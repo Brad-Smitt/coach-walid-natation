@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <!-- Gradient pour le fond -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0ea5e9;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0284c7;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Gradient pour les vagues -->
+    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.9" />
+      <stop offset="100%" style="stop-color:#e0f2fe;stop-opacity:0.7" />
+    </linearGradient>
+    
+    <!-- Gradient pour les initiales -->
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f0f9ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond principal avec coins arrondis -->
+  <rect width="32" height="32" rx="6" fill="url(#bgGradient)"/>
+  
+  <!-- Vagues stylisées (représentant la natation) -->
+  <path d="M2 20 Q8 18 16 20 T30 20 L30 32 L2 32 Z" fill="url(#waveGradient)" opacity="0.8"/>
+  <path d="M2 24 Q8 22 16 24 T30 24 L30 32 L2 32 Z" fill="url(#waveGradient)" opacity="0.6"/>
+  <path d="M2 28 Q8 26 16 28 T30 28 L30 32 L2 32 Z" fill="url(#waveGradient)" opacity="0.4"/>
+  
+  <!-- Initiales "CW" (Coach Walid) -->
+  <text x="16" y="14" font-family="Arial, sans-serif" font-size="12" font-weight="bold" 
+        text-anchor="middle" fill="url(#textGradient)" stroke="#0c4a6e" stroke-width="0.5">
+    CW
+  </text>
+  
+  <!-- Éléments décoratifs aquatiques -->
+  <circle cx="8" cy="8" r="1.5" fill="rgba(255,255,255,0.6)"/>
+  <circle cx="24" cy="10" r="1" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="6" cy="12" r="0.8" fill="rgba(255,255,255,0.5)"/>
+  
+  <!-- Bordure subtile -->
+  <rect width="32" height="32" rx="6" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+</svg>
