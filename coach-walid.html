@@ -6,6 +6,17 @@
     <title>Coach Walid - Premier cours de natation personnalisé</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN500EB5D1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MN500EB5D1');
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -1061,6 +1072,19 @@
             
             // Log des données (pour debug)
             console.log('Données envoyées à Formspree:', data);
+            
+            // Tracking Google Analytics - Conversion Lead Magnet
+            gtag('event', 'form_submit', {
+                'event_category': 'lead_generation',
+                'event_label': 'lead_magnet_main',
+                'value': 1
+            });
+            
+            // Tracking Google Analytics - Page View Fiche Technique
+            gtag('event', 'page_view', {
+                'page_title': 'Fiche Technique - Coach Walid',
+                'page_location': window.location.origin + '/fiche-technique.html'
+            });
             
             // Message de succès sera affiché par Formspree
             // Redirection automatique vers la fiche technique après quelques secondes

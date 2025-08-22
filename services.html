@@ -6,6 +6,17 @@
     <title>Services - Coach Walid - Natation Performance</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MN500EB5D1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-MN500EB5D1');
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -260,6 +271,33 @@
     </style>
 </head>
 <body>
+    <!-- Google Analytics Tracking -->
+    <script>
+        // Tracking du formulaire de services
+        function trackServiceForm() {
+            gtag('event', 'form_submit', {
+                'event_category': 'contact',
+                'event_label': 'services_contact',
+                'value': 1
+            });
+        }
+        
+        // Tracking des clics sur les boutons de réservation
+        document.addEventListener('DOMContentLoaded', function() {
+            const reserveButtons = document.querySelectorAll('.feature-link');
+            reserveButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    gtag('event', 'click', {
+                        'event_category': 'engagement',
+                        'event_label': 'service_reservation_click',
+                        'value': 1
+                    });
+                });
+            });
+        });
+    </script>
+    
+    <!-- Header -->
     <header class="header">
         <div class="container">
             <h1>Nos Services de Natation</h1>
@@ -365,7 +403,7 @@
                     </div>
                     <input type="hidden" name="source" value="Page Services">
                     <input type="hidden" name="page" value="services.html">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="submit" class="btn btn-primary" onclick="trackServiceForm()">
                         <i class="fas fa-paper-plane"></i> Envoyer le Message
                     </button>
                 </form>
