@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 Votre Fiche Technique Natation - Coach Walid</title>
+    <style>
+        /* Reset CSS pour compatibilité email */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #005f99 0%, #004d7a 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #005f99;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .greeting {
+            font-size: 20px;
+            color: #005f99;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+        
+        .message {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+            border-left: 4px solid #00b4d8;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .highlight-box h3 {
+            color: #005f99;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .highlight-box ul {
+            margin-left: 20px;
+        }
+        
+        .highlight-box li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b4d8 0%, #0077cc 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 180, 216, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 180, 216, 0.4);
+        }
+        
+        .fiche-preview {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .fiche-preview h3 {
+            color: #005f99;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .fiche-preview p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .feature-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+        
+        .feature-item i {
+            color: #00b4d8;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-item h4 {
+            color: #005f99;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .feature-item p {
+            color: #666;
+            font-size: 12px;
+        }
+        
+        .signature {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 2px solid #cbd5e0;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .signature h3 {
+            color: #005f99;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            text-align: center;
+        }
+        
+        .contact-item i {
+            color: #005f99;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        
+        .contact-item p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .footer {
+            background: #1a202c;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .footer p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: #00b4d8;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #005f99;
+            text-align: center;
+            margin: 25px 0;
+            font-size: 16px;
+            padding: 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+            border-left: 4px solid #00b4d8;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .content {
+                padding: 30px 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+            
+            .greeting {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <!-- Header avec Logo -->
+        <div class="header">
+            <div class="logo">🏊‍♂️</div>
+            <h1>Coach Walid - Natation Performance</h1>
+            <p>Votre expert en natation depuis plus de 10 ans</p>
+        </div>
+        
+        <!-- Contenu Principal -->
+        <div class="content">
+            <!-- Salutation Personnalisée -->
+            <div class="greeting">
+                Bonjour {{prenom}} ! 👋
+            </div>
+            
+            <!-- Message de Bienvenue -->
+            <div class="message">
+                <p>Un énorme <strong>MERCI</strong> pour votre confiance ! 🎉</p>
+                
+                <p>Je suis vraiment ravi que vous ayez choisi de rejoindre ma communauté de nageurs motivés. Votre fiche technique "Crawl & Brasse - Niveau Débutant" est prête et vous attend !</p>
+            </div>
+            
+            <!-- Boîte de Mise en Évidence -->
+            <div class="highlight-box">
+                <h3>🎁 Ce que vous allez recevoir :</h3>
+                <ul>
+                    <li><strong>12 exercices détaillés</strong> (8 crawl + 4 brasse)</li>
+                    <li><strong>Programme 4 semaines</strong> progressif et adapté</li>
+                    <li><strong>Conseils personnalisés</strong> de Coach Walid</li>
+                    <li><strong>Erreurs à éviter</strong> et solutions pratiques</li>
+                    <li><strong>Techniques testées</strong> avec mes élèves depuis 3 ans</li>
+                </ul>
+            </div>
+            
+            <!-- Bouton CTA Principal -->
+            <div style="text-align: center;">
+                <a href="https://brad-smitt.github.io/coach-walid-natation/fiche-technique.html" class="cta-button">
+                    🏊‍♂️ ACCÉDER À MA FICHE TECHNIQUE
+                </a>
+            </div>
+            
+            <!-- Aperçu de la Fiche -->
+            <div class="fiche-preview">
+                <h3>📖 Votre Guide Complet</h3>
+                <p>Une fiche technique interactive avec système de masquage, exercices détaillés et programme d'entraînement sur 4 semaines.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div style="font-size: 24px; color: #00b4d8;">💪</div>
+                        <h4>Position du Corps</h4>
+                        <p>Base de tout</p>
+                    </div>
+                    <div class="feature-item">
+                        <div style="font-size: 24px; color: #00b4d8;">🦵</div>
+                        <h4>Battements</h4>
+                        <p>Technique parfaite</p>
+                    </div>
+                    <div class="feature-item">
+                        <div style="font-size: 24px; color: #00b4d8;">🫁</div>
+                        <h4>Respiration</h4>
+                        <p>Clé du succès</p>
+                    </div>
+                    <div class="feature-item">
+                        <div style="font-size: 24px; color: #00b4d8;">⏰</div>
+                        <h4>Programme 4 sem</h4>
+                        <p>Progression garantie</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Citation Inspirante -->
+            <div class="quote">
+                "La natation, c'est comme la vie : on avance un coup de bras après l'autre, en gardant la tête hors de l'eau !" - Coach Walid
+            </div>
+            
+            <!-- Signature et Contact -->
+            <div class="signature">
+                <h3>💙 Coach Walid</h3>
+                <p>Votre coach personnel en natation</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div style="font-size: 20px; color: #005f99;">📧</div>
+                        <p>coachwalid@exemple.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div style="font-size: 20px; color: #005f99;">📱</div>
+                        <p>+33 1 23 45 67 89</p>
+                    </div>
+                    <div class="contact-item">
+                        <div style="font-size: 20px; color: #005f99;">🌐</div>
+                        <p>Site Web</p>
+                    </div>
+                </div>
+                
+                <p style="margin-top: 20px; font-size: 14px; color: #666;">
+                    <strong>Prêt à passer à l'action ?</strong><br>
+                    Réservez votre premier cours et commencez votre transformation aquatique !
+                </p>
+            </div>
+            
+            <!-- Call-to-Action Final -->
+            <div style="text-align: center; margin: 30px 0;">
+                <a href="https://brad-smitt.github.io/coach-walid-natation/services.html" class="cta-button" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+                    🗓️ RÉSERVER MON PREMIER COURS
+                </a>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>Coach Walid - Natation Performance</strong></p>
+            <p>Plus de 10 ans d'expérience dans l'enseignement de la natation</p>
+            
+            <div class="social-links">
+                <a href="https://facebook.com/coachwalid">Facebook</a> |
+                <a href="https://instagram.com/coachwalid">Instagram</a> |
+                <a href="https://youtube.com/coachwalid">YouTube</a>
+            </div>
+            
+            <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">
+                Cet email a été envoyé à {{email}}<br>
+                Vous pouvez vous désabonner à tout moment
+            </p>
+        </div>
+    </div>
+</body>
+</html>
