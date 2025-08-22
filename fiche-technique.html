@@ -622,6 +622,33 @@
                 </div>
             </div>
             
+            <!-- Formulaire de Contact -->
+            <div style="margin-top: 30px; padding: 20px; background: #f8fafc; border-radius: 12px; border: 2px solid #e2e8f0;">
+                <h4 style="color: #334155; margin-bottom: 20px; text-align: center;">
+                    <i class="fas fa-comments"></i> Questions sur la Fiche Technique ?
+                </h4>
+                <p style="text-align: center; margin-bottom: 20px; color: #64748b;">
+                    Vous avez des questions sur un exercice ? Besoin de clarifications ? Contactez-moi !
+                </p>
+                
+                <form action="https://formspree.io/f/xldlqpnb" method="POST" style="max-width: 500px; margin: 0 auto;">
+                    <div style="margin-bottom: 15px;">
+                        <input type="text" name="prenom" placeholder="Prénom *" required style="width: 100%; padding: 12px; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 0.9rem;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <input type="email" name="email" placeholder="Email *" required style="width: 100%; padding: 12px; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 0.9rem;">
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <textarea name="message" placeholder="Votre question sur la fiche technique *" rows="3" required style="width: 100%; padding: 12px; border: 1px solid #cbd5e0; border-radius: 8px; font-size: 0.9rem; resize: vertical;"></textarea>
+                    </div>
+                    <input type="hidden" name="source" value="Fiche Technique - Questions">
+                    <input type="hidden" name="page" value="fiche-technique.html">
+                    <button type="submit" style="width: 100%; background: #005f99; color: white; padding: 12px; border: none; border-radius: 8px; font-size: 0.9rem; font-weight: 600; cursor: pointer;">
+                        <i class="fas fa-paper-plane"></i> Envoyer ma Question
+                    </button>
+                </form>
+            </div>
+            
             <p style="margin-top: 20px; font-style: italic; color: #64748b;">
                 "La natation, c'est comme la vie : on avance un coup de bras après l'autre, en gardant la tête hors de l'eau !" - Coach Walid
             </p>

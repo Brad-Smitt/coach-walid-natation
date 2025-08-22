@@ -884,26 +884,28 @@
                                     <p class="personal-touch">💪 Pas de pression, prenez votre temps !</p>
                                 </div>
                                 
-                                <form class="lead-form" id="leadFormMain">
+                                <form class="lead-form" id="leadFormMain" action="https://formspree.io/f/xldlqpnb" method="POST">
                                     <div class="form-row">
                                         <div class="form-group">
-                                            <input type="text" placeholder="Prénom *" required>
+                                            <input type="text" name="prenom" placeholder="Prénom *" required>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" placeholder="Nom *" required>
+                                            <input type="text" name="nom" placeholder="Nom *" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" placeholder="Email *" required>
+                                        <input type="email" name="email" placeholder="Email *" required>
                                     </div>
                                     <div class="form-group">
-                                        <select required>
+                                        <select name="niveau" required>
                                             <option value="">Votre niveau actuel *</option>
                                             <option value="debutant">Débutant (je sais nager mais pas bien)</option>
                                             <option value="intermediaire">Intermédiaire (je nage régulièrement)</option>
                                             <option value="avance">Avancé (je veux me perfectionner)</option>
                                         </select>
                                     </div>
+                                    <input type="hidden" name="source" value="Site Principal - Lead Magnet">
+                                    <input type="hidden" name="page" value="coach-walid.html">
                                     <button type="submit" class="lead-submit-btn">
                                         <i class="fas fa-heart"></i> Recevoir Mon Cadeau
                                     </button>
@@ -1050,17 +1052,22 @@
 
         // Lead Magnet Form Handler
         document.getElementById('leadFormMain').addEventListener('submit', function(e) {
-            e.preventDefault();
+            // Le formulaire sera soumis automatiquement à Formspree
+            // Pas besoin de preventDefault() car on veut que Formspree traite
             
-            // Récupération des données du formulaire
+            // Récupération des données du formulaire pour log
             const formData = new FormData(this);
             const data = Object.fromEntries(formData);
             
-            // Simulation d'envoi (remplacer par votre logique réelle)
-            console.log('Données du lead principal:', data);
+            // Log des données (pour debug)
+            console.log('Données envoyées à Formspree:', data);
             
-            // Affichage du message de succès
-            alert('🎉 Excellent ! Votre fiche technique sera téléchargée automatiquement.\n\nCoach Walid vous contactera bientôt pour des conseils personnalisés !');
+            // Message de succès sera affiché par Formspree
+            // Redirection automatique vers la fiche technique après quelques secondes
+            setTimeout(() => {
+                // Redirection vers la fiche technique
+                window.location.href = 'fiche-technique.html';
+            }, 2000);
         });
 
         // Animation des statistiques
